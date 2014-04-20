@@ -1,8 +1,8 @@
-{% raw %}{% extends "base.html" %}
+{% raw %}{% extends "{% endraw %}{{ cookiecutter.app_name|lower }}{% raw %}/base.html" %}
 
 {% block content %}
     <h1>Listing</h1>
-    <a href="{% url '{% endraw %}{{ cookiecutter.model_name|lower }}{% raw %}_create' %}">Create</a>
+    <a href="{% url '{% endraw %}{{ cookiecutter.model_name|lower }}{% raw %}:create' %}">Create</a>
     <ul>
         {% for object in object_list %}
             <li>
