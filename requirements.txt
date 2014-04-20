@@ -1,8 +1,10 @@
 django
 cookiecutter
 django-vanilla-views
-django-floppyforms
+django-crispy-forms
+django-import-export
 model-mommy
 webtest
 django-webtest
 django-model-utils==2.0.2
+django-reversion
