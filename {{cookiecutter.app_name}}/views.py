@@ -10,7 +10,7 @@ class {{ cookiecutter.model_name }}CRUDView(object):
     paginate_by = 20
 
     def get_success_url(self):
-        return reverse('{{ cookiecutter.model_name|lower }}_list')
+        return reverse('{{ cookiecutter.model_name|lower }}:list')
 
 
 class {{ cookiecutter.model_name }}List({{ cookiecutter.model_name }}CRUDView, ListView):

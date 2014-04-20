@@ -23,5 +23,5 @@ class {{ cookiecutter.model_name }}(StatusModel, TimeStampedModel):
         return '{{ cookiecutter.model_name }} ({})'.format(self.id or 'Unsaved')
 
     def get_absolute_url(self):
-        return reverse('{{ cookiecutter.model_name|lower }}_detail', args=[str(self.id)])
+        return reverse('{{ cookiecutter.model_name|lower }}:detail', args=[str(self.id)])
 
