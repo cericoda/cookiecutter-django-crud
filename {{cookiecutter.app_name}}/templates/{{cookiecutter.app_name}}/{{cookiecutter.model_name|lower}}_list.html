@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Listing</h1>
-    <a href="{% url '{% endraw %}{{ cookiecutter.model_name|lower }}{% raw %}:create' %}">Create</a>
+    <a href="{% url '{% endraw %}{{ cookiecutter.model_name|lower }}{% raw %}:add' %}">Add New</a>
     <ul>
         {% for object in object_list %}
             <li>
