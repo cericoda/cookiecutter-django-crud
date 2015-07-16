@@ -5,9 +5,11 @@ from django.utils.encoding import python_2_unicode_compatible
 from model_utils.models import StatusModel, TimeStampedModel
 from model_utils.choices import Choices
 
+
 class NonArchived{{ cookiecutter.model_name }}Manager(models.Manager):
     def get_query_set(self):
         return super(NonArchived{{ cookiecutter.model_name }}Manager, self).get_query_set().exclude(status='Archived')
+
 
 @python_2_unicode_compatible
 class {{ cookiecutter.model_name }}(StatusModel, TimeStampedModel):

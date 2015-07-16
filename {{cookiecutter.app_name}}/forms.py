@@ -42,4 +42,4 @@ class {{ cookiecutter.model_name }}Form(forms.ModelForm):
 #         self.fields['details'].widget=Textarea()
 #         self.fields['quote_prepared_by'].label_from_instance = lambda obj: "%s" % obj.get_full_name()
 #         self.fields['project_deadline'].required = True
-        
+

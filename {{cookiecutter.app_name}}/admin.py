@@ -4,6 +4,7 @@ from import_export import resources
 import reversion
 from .models import {{ cookiecutter.model_name }}
 
+
 class IEAdmin(reversion.VersionAdmin, ImportExportModelAdmin):    
     pass
 
