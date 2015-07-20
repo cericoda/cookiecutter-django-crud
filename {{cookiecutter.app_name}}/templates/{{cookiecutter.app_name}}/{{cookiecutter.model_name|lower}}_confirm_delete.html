@@ -4,7 +4,7 @@
     <h1>Delete</h1>
     <p>Are you sure you want to delete?</p>
 
-    <form id="{% endraw %}{{ cookiecutter.model_name|lower }}{% raw %}:form" method="post" action=".">
+    <form id="confirm-delete" method="post" action=".">
     {% csrf_token %}
     <input type="submit" value="Yes" class="btn btn-primary" /> <a href="{% url '{% endraw %}{{ cookiecutter.model_name|lower }}{% raw %}:list' %}" class="btn btn-danger">No</a>
     </form>

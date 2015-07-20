@@ -25,13 +25,13 @@ class {{ cookiecutter.model_name }}Test(WebTest):
         """
         Test that we can create an instance via the create view.
         """
-        response = self.app.get(reverse('{{ cookiecutter.model_name|lower }}:create'))
+        response = self.app.get(reverse('{{ cookiecutter.model_name|lower }}:add'))
         new_name = 'A freshly created thing'
 
         # check that we don't already have a model with this name
         self.assertFalse({{ cookiecutter.model_name }}.objects.filter(name=new_name).exists())
 
-        form = response.forms['{{ cookiecutter.model_name|lower }}_form']
+        form = response.forms['id-{{ cookiecutter.model_name|lower }}-form']
         form['name'] = new_name
         form.submit().follow()
 
@@ -53,7 +53,7 @@ class {{ cookiecutter.model_name }}Test(WebTest):
         instance = mommy.make({{ cookiecutter.model_name }})
         response = self.app.get(reverse('{{ cookiecutter.model_name|lower }}:update', kwargs={'pk': instance.pk, }))
 
-        form = response.forms['{{ cookiecutter.model_name|lower }}_form']
+        form = response.forms['id-{{ cookiecutter.model_name|lower }}-form']
         new_name = 'Some new thing'
         form['name'] = new_name
         form.submit().follow()
@@ -68,6 +68,6 @@ class {{ cookiecutter.model_name }}Test(WebTest):
         instance = mommy.make({{ cookiecutter.model_name }})
         pk = instance.pk
         response = self.app.get(reverse('{{ cookiecutter.model_name|lower }}:delete', kwargs={'pk': pk, }))
-        response = response.form.submit().follow()
+        response = response.forms['confirm-delete'].submit().follow()
         self.assertFalse({{ cookiecutter.model_name }}.objects.filter(pk=pk).exists())
 

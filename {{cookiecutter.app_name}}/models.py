@@ -8,7 +8,9 @@ from model_utils.choices import Choices
 
 class NonArchived{{ cookiecutter.model_name }}Manager(models.Manager):
     def get_query_set(self):
-        return super(NonArchived{{ cookiecutter.model_name }}Manager, self).get_query_set().exclude(status='Archived')
+        return super(
+            NonArchived{{ cookiecutter.model_name }}Manager, self
+        ).get_query_set().exclude(status={{ cookiecutter.model_name }}.STATUS.archived)
 
 
 @python_2_unicode_compatible

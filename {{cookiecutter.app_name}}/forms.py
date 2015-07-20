@@ -12,7 +12,7 @@ class {{ cookiecutter.model_name }}Form(forms.ModelForm):
         super({{ cookiecutter.model_name }}Form, self).__init__(*args, **kwargs)
         self.helper = FormHelper()
         
-        self.helper.form_id = 'id-{{ cookiecutter.model_name }}Form'
+        self.helper.form_id = 'id-{{ cookiecutter.model_name|lower }}-form'
         self.helper.form_class = 'form-horizontal'
         self.helper.label_class = 'col-lg-2'
         self.helper.field_class = 'col-lg-8'
